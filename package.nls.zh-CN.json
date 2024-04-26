@@ -1,0 +1,14 @@
+{
+    "description.oneDarkProDarkerCustom.editorTheme": "设置不同编辑器主题",
+    "description.oneDarkProDarkerCustom.italic": "设置部分代码为斜体",
+    "description.oneDarkProDarkerCustom.vivid": "设置色彩为 vivid",
+    "description.oneDarkProDarkerCustom.bold": "设置部分代码为粗体",
+    "description.oneDarkProDarkerCustom.showChangelog": "打开变更日志",
+    "description.oneDarkProDarkerCustom.setVivid": "设置色彩为 vivid",
+    "description.oneDarkProDarkerCustom.cancelVivid": "取消设置色彩为 vivid",
+    "description.oneDarkProDarkerCustom.setBold": "设置部分代码为粗体",
+    "description.oneDarkProDarkerCustom.cancelBold": "取消设置部分代码为粗体",
+    "description.oneDarkProDarkerCustom.setItalic": "设置部分代码为斜体",
+    "description.oneDarkProDarkerCustom.cancelItalic": "取消设置部分代码为斜体",
+    "description.oneDarkProDarkerCustom.markdownStyle": "使用内置的 Markdown 样式"
+}

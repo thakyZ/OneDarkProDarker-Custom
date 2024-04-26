@@ -4,8 +4,8 @@
         <Identity Id="OneDarkProDarker_Custom.e1e706e2-05d3-4da9-8754-652cd8ab65f4" Version="1.0" Language="en-US" Publisher="Neko Boi Nick" />
         <DisplayName>One Dark Pro Darker - Custom</DisplayName>
         <Description xml:space="preserve">VSTheme project.</Description>
-        <License>..\LICENSE</License>
-        <Icon>Custom.svg</Icon>
+        <License>.\LICENSE</License>
+        <Icon>..\icon.svg</Icon>
         <Tags>Dark, Theme, One Dark, One Dark Pro, One Dark Pro Darker</Tags>
     </Metadata>
     <Installation>

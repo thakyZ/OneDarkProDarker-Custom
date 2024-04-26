@@ -1,0 +1,335 @@
+{
+  "name": "material-theme-darker-custom",
+  "displayName": "One Dark Pro - Darker (Custom)",
+  "description": "A custom darker theme of Atom's iconic One Dark theme for Visual Studio Code originally created by zhuangtongfa",
+  "version": "1.0.0",
+  "publisher": "nekoboinick",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thakyZ/OneDarkProDarker-Custom/issues"
+  },
+  "homepage": "https://thakyz.github.io/OneDarkProDarker-Custom/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thakyZ/OneDarkProDarker-Custom"
+  },
+  "engines": {
+    "vscode": "1.88.0"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "browser": "./out/web/extension.js",
+  "categories": [
+    "Themes"
+  ],
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
+  "eslintConfig": {
+    "extends": [
+      "@mskelton",
+      "@mskelton/eslint-config"
+    ],
+    "plugins": [
+      "html"
+    ],
+    "rules": {
+      "sort/imports": "off"
+    }
+  },
+  "cspell": {
+    "words": [
+      "webviews",
+      "nekoboinick",
+      "zhuangtongfa",
+      "mskelton",
+      "docsify",
+      "Nord",
+      "onedark",
+      "Stackframe",
+      "cssrem",
+      "worktree",
+      "unpulled",
+      "Chatr",
+      "unpushlished",
+      "setext",
+      "laravel",
+      "typehinted",
+      "hashkey",
+      "flowtype",
+      "colour",
+      "prerequisities",
+      "hlsl",
+      "wikiword"
+    ]
+  },
+  "scripts": {
+    "docs": "docsify serve docs",
+    "build:theme": "ts-node --project scripts/tsconfig.json scripts/generate-theme.ts",
+    "build:ts": "tsc -p src",
+    "build": "yarn build:sass && yarn build:theme && yarn build:ts",
+    "lint": "eslint . --ext .ts",
+    "watch:theme": "nodemon ./scripts/generate-theme.ts",
+    "watch:ts": "yarn build:ts -w",
+    "vscode:prepublish": "yarn build && yarn package-web",
+    "package": "vsce package",
+    "build:sass": "yarn sass --no-source-map scss:styles && yarn sass --no-source-map scss:styles/origin",
+    "compile-web": "webpack --config ./build/web-extension.webpack.config.js",
+    "watch-web": "webpack --watch --config ./build/web-extension.webpack.config.js",
+    "package-web": "webpack --mode production --devtool hidden-source-map --config ./build/web-extension.webpack.config.js"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false
+  },
+  "contributes": {
+    "markdown.previewStyles": [
+      "./styles/base-inside.css",
+      "./styles/markdown-inside.css",
+      "./styles/atom-one-dark-inside.css"
+    ],
+    "commands": [
+      {
+        "command": "oneDarkProDarkerCustom.showChangelog",
+        "title": "%description.oneDarkProDarkerCustom.showChangelog%",
+        "category": "OneDark Pro - Darker (Custom)"
+      },
+      {
+        "command": "oneDarkProDarkerCustom.setVivid",
+        "title": "%description.oneDarkProDarkerCustom.setVivid%",
+        "category": "OneDark Pro - Darker (Custom)"
+      },
+      {
+        "command": "oneDarkProDarkerCustom.cancelVivid",
+        "title": "%description.oneDarkProDarkerCustom.cancelVivid%",
+        "category": "OneDark Pro - Darker (Custom)"
+      },
+      {
+        "command": "oneDarkProDarkerCustom.setItalic",
+        "title": "%description.oneDarkProDarkerCustom.setItalic%",
+        "category": "OneDark Pro - Darker (Custom)"
+      },
+      {
+        "command": "oneDarkProDarkerCustom.cancelItalic",
+        "title": "%description.oneDarkProDarkerCustom.cancelItalic%",
+        "category": "OneDark Pro - Darker (Custom)"
+      },
+      {
+        "command": "oneDarkProDarkerCustom.setBold",
+        "title": "%description.oneDarkProDarkerCustom.setBold%",
+        "category": "OneDark Pro - Darker (Custom)"
+      },
+      {
+        "command": "oneDarkProDarkerCustom.cancelBold",
+        "title": "%description.oneDarkProDarkerCustom.cancelBold%",
+        "category": "OneDark Pro - Darker (Custom)"
+      }
+    ],
+    "themes": [
+      {
+        "label": "One Dark Pro Darker (Custom)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/OneDark-Pro-darker-custom.json"
+      }
+    ],
+    "configuration": {
+      "title": "One Dark Pro Darker (Custom)",
+      "properties": {
+        "oneDarkProDarkerCustom.editorTheme": {
+          "type": "string",
+          "default": "One Dark Pro",
+          "markdownDescription": "%description.oneDarkProDarkerCustom.editorTheme%",
+          "enum": [
+            "Nord",
+            "Solarized",
+            "Solarized Flat",
+            "Shadow",
+            "Panda",
+            "Ayu",
+            "VS Code",
+            "Just Black",
+            "One Dark Pro Darker",
+            "One Dark Pro Darker (Custom)",
+            "Ocean",
+            "Tokyo",
+            "Retro",
+            "Gnome",
+            "Dark Modern"
+          ]
+        },
+        "oneDarkProDarkerCustom.italic": {
+          "type": "boolean",
+          "default": true,
+          "description": "%description.oneDarkProDarkerCustom.italic%"
+        },
+        "oneDarkProDarkerCustom.vivid": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "%description.oneDarkProDarkerCustom.vivid%"
+        },
+        "oneDarkProDarkerCustom.bold": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "%description.oneDarkProDarkerCustom.bold%"
+        },
+        "oneDarkProDarkerCustom.markdownStyle": {
+          "type": "boolean",
+          "default": true,
+          "description": "%description.oneDarkProDarkerCustom.markdownStyle%"
+        },
+        "oneDarkProDarkerCustom.color": {
+          "type": "object",
+          "scope": "resource",
+          "default": {
+            "chalky": "",
+            "coral": "",
+            "dark": "",
+            "error": "",
+            "fountainBlue": "",
+            "green": "",
+            "invalid": "",
+            "lightDark": "",
+            "lightWhite": "",
+            "malibu": "",
+            "purple": "",
+            "whiskey": "",
+            "deepRed": ""
+          },
+          "properties": {
+            "chalky": {
+              "type": "string",
+              "default": ""
+            },
+            "coral": {
+              "type": "string",
+              "default": ""
+            },
+            "dark": {
+              "type": "string",
+              "default": ""
+            },
+            "error": {
+              "type": "string",
+              "default": ""
+            },
+            "fountainBlue": {
+              "type": "string",
+              "default": ""
+            },
+            "green": {
+              "type": "string",
+              "default": ""
+            },
+            "invalid": {
+              "type": "string",
+              "default": ""
+            },
+            "lightDark": {
+              "type": "string",
+              "default": ""
+            },
+            "lightWhite": {
+              "type": "string",
+              "default": ""
+            },
+            "malibu": {
+              "type": "string",
+              "default": ""
+            },
+            "purple": {
+              "type": "string",
+              "default": ""
+            },
+            "whiskey": {
+              "type": "string",
+              "default": ""
+            },
+            "deepRed": {
+              "type": "string",
+              "default": ""
+            }
+          },
+          "additionalProperties": false,
+          "markdownDescription": "Code highlight color, read more [docs](https://thakyZ.github.io/OneDarkProDarker-Custom/#/?id=highlight-color-custom)"
+        }
+      }
+    }
+  },
+  "icon": "icon.png",
+  "keywords": [
+    "one dark",
+    "onedark",
+    "one dark pro",
+    "one dark pro darker",
+    "one dark pro darker custom",
+    "onedark pro",
+    "one dark pro darker",
+    "one dark pro darker custom",
+    "onedark pro darker",
+    "onedark pro darker custom",
+    "darker",
+    "custom",
+    "theme",
+    "atom"
+  ],
+  "devDependencies": {
+    "@mskelton/eslint-config": "^8.5.1",
+    "@mskelton/prettier-config": "5.1.0",
+    "@types/node": "20.12.7",
+    "@types/vscode": "1.88.0",
+    "@typescript-eslint/eslint-plugin": "^7.7.1",
+    "@typescript-eslint/parser": "^7.7.1",
+    "all-contributors-cli": "6.26.1",
+    "docsify-cli": "4.4.4",
+    "eslint": "8.56.0",
+    "eslint-plugin-html": "8.1.1",
+    "eslint-plugin-sort": "2.10.0",
+    "nodemon": "3.1.0",
+    "path-browserify": "1.0.1",
+    "prettier": "3.2.5",
+    "process": "0.11.10",
+    "sass": "1.75.0",
+    "ts-loader": "9.5.1",
+    "ts-node": "10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "5.4.5",
+    "util": "0.12.5",
+    "vsce": "2.7.0",
+    "webpack": "5.91.0",
+    "webpack-cli": "5.1.4"
+  },
+  "galleryBanner": {
+    "color": "#2d323b",
+    "theme": "dark"
+  },
+  "dependencies": {
+    "@types/marked": "^5.0.2",
+    "marked": "12"
+  },
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": true
+  },
+  "badges": [
+    {
+      "url": "https://vsmarketplacebadges.dev/version/nekoboinick.Material-theme-darker-custom.png",
+      "href": "https://marketplace.visualstudio.com/items/nekoboinick.Material-theme-darker-custom",
+      "description": "Extension version"
+    },
+    {
+      "url": "https://vsmarketplacebadges.dev/installs/nekoboinick.Material-theme-darker-custom.png",
+      "href": "https://marketplace.visualstudio.com/items/nekoboinick.Material-theme-darker-custom",
+      "description": "Extension installs"
+    },
+    {
+      "url": "https://vsmarketplacebadges.dev/rating/nekoboinick.Material-theme-darker-custom.png",
+      "href": "https://marketplace.visualstudio.com/items/nekoboinick.Material-theme-darker-custom",
+      "description": "Extension Rating"
+    }
+  ]
+}
