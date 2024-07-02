@@ -277,7 +277,7 @@
   ],
   "devDependencies": {
     "@mskelton/eslint-config": "^8.5.1",
-    "@mskelton/prettier-config": "5.1.0",
+    "@mskelton/prettier-config": "5.1.1",
     "@types/node": "20.12.7",
     "@types/vscode": "1.88.0",
     "@typescript-eslint/eslint-plugin": "^7.8.0",
