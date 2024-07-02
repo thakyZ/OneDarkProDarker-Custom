@@ -4,6 +4,9 @@
   "description": "A custom darker theme of Atom's iconic One Dark theme for Visual Studio Code originally created by zhuangtongfa",
   "version": "1.0.0",
   "publisher": "nekoboinick",
+  "__metadata": {
+    "publisherDisplayName": "Neko Boi Nick"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/thakyZ/OneDarkProDarker-Custom/issues"
